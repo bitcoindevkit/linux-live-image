@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -e
+
+lb config noauto \
+	--architectures ${BDK_LIVE_ARCH:-amd64} \
+	--archive-areas "main contrib" \
+	--apt-recommends false \
+	--binary-images iso-hybrid \
+	--bootappend-live "boot=live components hostname=debian-bdk noeject autologin live-config.user-default-groups=audio,cdrom,dip,floppy,video,plugdev,netdev,powerdev,scanner,bluetooth,lpadmin" \
+	--checksums sha256 \
+	--debian-installer false \
+	--debian-installer-gui false \
+	--distribution buster \
+	--iso-application "BDK Debian Live" \
+	--iso-publisher "BDK Developers; https://bitcoindevkit.org" \
+	--system live \
+	--win32-loader true \
+	"${@}"

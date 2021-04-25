@@ -1,0 +1,6 @@
+[submodule "rust-build/rusty-paper-wallet"]
+	path = rust-build/rusty-paper-wallet
+	url = https://github.com/RCasatta/rusty-paper-wallet.git
+[submodule "rust-build/bdk-cli"]
+	path = rust-build/bdk-cli
+	url = https://github.com/bitcoindevkit/bdk-cli.git
